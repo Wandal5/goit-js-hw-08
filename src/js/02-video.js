@@ -7,12 +7,10 @@ const player = new Player(iframe);
 player.on('timeupdate', throttle(onTimedUpdate, 1000));
 
 function onTimedUpdate(e) {
-    
-    localStorage.setItem('videoplayer-current-time', e.seconds);
-};
+  localStorage.setItem('videoplayer-current-time', e.seconds);
+}
 
-const getTimeSum = (localStorage.getItem('videoplayer-current-time'));
+const getTimeSum = localStorage.getItem('videoplayer-current-time');
 if (getTimeSum !== null) {
-    player.setCurrentTime(getTimeSum)
-
+  player.setCurrentTime(getTimeSum);
 }
